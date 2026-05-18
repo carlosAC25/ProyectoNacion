@@ -1,0 +1,242 @@
+/* ==========================================================================
+   VARIABLES DE COLOR (Diferentes tonalidades de azul y blanco)
+   ========================================================================== */
+:root {
+  --azul-claro-fondo: #eef5fc; /* Fondo suave para menú móvil */
+  --azul-electrico: #007bff;   /* Para el hover de los botones */
+  --azul-medio: #0056b3;       /* Líneas decorativas */
+  --azul-oscuro: #102a43;      /* Color de texto principal */
+  --azul-footer: #0b1a30;      /* Azul bastante oscuro para el pie de página */
+  --blanco-puro: #ffffff;
+  --blanco-suave: #f8f9fa;
+  --transicion-suave: all 0.3s ease-in-out;
+}
+
+/* Reset básico para que nada se descuadre */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Compensar la altura de la barra fija en el cuerpo de la página */
+body {
+  padding-top: 80px; 
+  background-color: var(--blanco-suave);
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN (HEADER)
+   ========================================================================== */
+.barra-navegacion {
+  position: fixed;       /* Hace que la barra se mueva con el usuario al bajar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: var(--blanco-puro);
+  display: flex;
+  justify-content: space-between; /* Distribuye el logo a la izquierda y menú a la derecha */
+  align-items: center;
+  padding: 0 4%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra elegante */
+  z-index: 2000;         /* Asegura que siempre esté por encima de todo */
+}
+
+/* Estilo para el Logo */
+.barra-navegacion .logo {
+  height: 55px;          /* Ajusta el alto de tu imagen 'ipclogo2.jpeg' */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Lista de navegación de forma horizontal y ordenada */
+.navegacion ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;            /* Espaciado entre botones */
+}
+
+/* Estilo estilizado para los enlaces/botones */
+.navegacion ul li a {
+  text-decoration: none;
+  color: var(--azul-oscuro);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border-radius: 6px;
+  transition: var(--transicion-suave);
+}
+
+/* Efecto HOVER: Cambia de color elegantemente al pasar el mouse encima */
+.navegacion ul li a:hover {
+  background-color: var(--azul-electrico);
+  color: var(--blanco-puro);
+}
+
+/* Ocultar el mecanismo del botón colapsable en computadoras */
+.menu-toggle-check {
+  display: none;
+}
+
+.menu-toggle-btn {
+  display: none; /* Se activa solo en pantallas pequeñas */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.menu-toggle-btn span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--azul-medio);
+  border-radius: 3px;
+  transition: var(--transicion-suave);
+}
+
+
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+.pie-de-paginaxd {
+  background-color: var(--azul-footer); /* Azul significativamente más oscuro */
+  color: var(--blanco-suave);
+  padding: 40px 6% 25px 6%;
+  margin-top: 60px; /* Separación del contenido principal */
+}
+
+.contenedor-pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sección de aclaración (Instituto) */
+.aclaracion-pie {
+  flex: 1;
+  min-width: 280px;
+}
+
+.aclaracion-pie h3 {
+  color: var(--blanco-puro);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+/* Pequeña línea decorativa de color azul brillante debajo del título */
+.aclaracion-pie h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--azul-electrico);
+  margin-top: 6px;
+}
+
+.aclaracion-pie p {
+  color: #a5bacc; /* Un tono blanco azulado muy sutil y bonito */
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Sección de advertencia legal y derechos */
+.advertencia-pie {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.advertencia-pie .legal {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.05); /* Caja de fondo tenue */
+  padding: 12px;
+  border-left: 4px solid var(--azul-electrico);
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.advertencia-pie .copyright {
+  color: #7b93a4;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Menú colapsable para teléfonos y tablets)
+   ========================================================================== */
+@media (max-width: 850px) {
+  /* Mostrar el botón de colapso (las 3 líneas horizontales) */
+  .menu-toggle-btn {
+    display: flex;
+    z-index: 2001;
+  }
+
+  /* Transformar el menú horizontal en un panel vertical colapsable */
+  .navegacion {
+    position: absolute;
+    top: 80px;
+    left: -100%; /* Totalmente oculto a la izquierda por defecto */
+    width: 100%;
+    height: calc(100vh - 80px); /* Ocupa el resto de la pantalla celular */
+    background-color: var(--azul-claro-fondo);
+    padding: 40px 0;
+    transition: var(--transicion-suave);
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  .navegacion ul {
+    flex-direction: column; /* Cambia la lista de horizontal a vertical */
+    width: 100%;
+    gap: 20px;
+  }
+
+  .navegacion ul li {
+    width: 85%;
+    text-align: center;
+  }
+
+  .navegacion ul li a {
+    display: block;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px;
+    color: var(--azul-oscuro);
+  }
+
+  /* ACCIÓN: Cuando el usuario presiona el botón, el menú se despliega */
+  .menu-toggle-check:checked ~ .navegacion {
+    left: 0; /* Trae el menú al frente ocupando la pantalla */
+  }
+
+  /* Animación del botón hamburguesa para transformarse en una "X" al abrir */
+  .menu-toggle-check:checked ~ .menu-toggle-btn span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: var(--azul-electrico);
+  }
+  .menu-toggle-check:checked ~ .menu-toggle-btn span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle-check:checked ~ .menu-toggle-btn span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: var(--azul-electrico);
+  }
+
+  /* Ajustar el footer para que sus secciones se apilen en una sola columna en móviles */
+  .contenedor-pie {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
