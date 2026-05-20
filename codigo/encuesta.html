@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=CX, initial-scale=1.0">
     <title>Encuesta</title>
     <link rel="stylesheet" href="../css/navfoot.css">
+    <link rel="stylesheet" href="../css/encuesta.css">
 </head>
 <body>
 
@@ -32,9 +33,95 @@
     </header>
 
 <!-- Aqui va el contenido principal (lo que van a hacer) /AC/-->
-    <main>
+<main>
+        <section id="seccion-lectura" class="seccion-activa">
+            <div class="encabezado-principal">
+                <h2>Los Derechos Humanos</h2>
+                <p>Aprende un poco más acerca de los derechos humanos. </p>
+            </div>
 
+            <div class="contenedor-temas">
+                <div class="tarjeta-tema" id="tema1" onclick="marcarLeido(1)">
+                    <h3>Derecho al Trabajo</h3>
+                    <p>Los derechos del trabajador es el más importante son el conjunto de garantías legales que protegen a toda persona que presta un servicio a cambio de un salario. Buscan asegurar condiciones dignas, justas y seguras en el trabajo sobre la Igualdad principalmente por el Articulo. 102.</p>
+                    <span class="estado-lectura">Pendiente de leer</span>
+                </div>
+                
+                <div class="tarjeta-tema" id="tema2" onclick="marcarLeido(2)">
+                    <h3>Derecho a la Presunción de Inocencia</h3>
+                    <p>El derecho a la presunción de inocencia nos dice que: "toda persona señalada de un delito debe ser considerada y tratada como inocente hasta que se demuestre lo contrario en un juicio justo y firme." Mas que una ley, es un deber, no solo de las autoridades, también de nosotros como humanos, el tener un pensamiento justo y validar las opiniones de los demás, no juzgar o castigarte sin antes saber la verdad.</p>
+                    <span class="estado-lectura">Pendiente de leer</span>
+                </div>
+            </div>
+            <p id="mensaje-bloqueo" class="mensaje-alerta">Lee y marca ambos temas para ver las opciones.</p>
+        </section>
+
+        <section id="seccion-opciones" class="seccion-oculta" style="display: none;">
+            <a href="https://wayground.com/join" class="enlace-respaldo">Ir manualmente</a>
+
+            <div class="encabezado-principal">
+                <h2>Selecciona tu grado</h2>
+                <p>Selecciona tu grado para seguir con el cuestionario.</p>
+            </div>
+
+            <div class="contenedor-botones">
+                <a href="[ENLACE_OPCION_1]" class="boton-opcion opcion-1">
+                    <h3>1ro y 2do Básico</h3>
+                    <p>Ir al primer cuestionario</p>
+                </a>
+                
+                <a href="https://wayground.com/join?gc=487684&source=liveDashboard" class="boton-opcion opcion-2">
+                    <h3>3ro Básico y 4to Bachillerato</h3>
+                    <p>Ir al segundo cuestionario</p>
+                </a>
+            </div>
+        </section>
     </main>
+
+    <script>
+        let tema1Leido = false;
+        let tema2Leido = false;
+
+        function marcarLeido(numeroTema) {
+            const tarjeta = document.getElementById(`tema${numeroTema}`);
+            const estado = tarjeta.querySelector('.estado-lectura');
+            
+            // Cambiamos el estilo a leído
+            tarjeta.classList.add('leido');
+            estado.textContent = '¡Leído!';
+            
+            // Registramos cuál se leyó
+            if (numeroTema === 1) tema1Leido = true;
+            if (numeroTema === 2) tema2Leido = true;
+
+            // Verificamos si ya leyó los dos
+            if (tema1Leido && tema2Leido) {
+                document.getElementById('mensaje-bloqueo').textContent = "¡Excelente! Cargando opciones...";
+                document.getElementById('mensaje-bloqueo').style.color = "#28a745"; // Verde
+                
+                // Esperamos 1 segundo para que vea el mensaje de éxito y hacemos la transición
+                setTimeout(() => {
+                    const seccionLectura = document.getElementById('seccion-lectura');
+                    const seccionOpciones = document.getElementById('seccion-opciones');
+                    
+                    // Animación de salida de la sección 1
+                    seccionLectura.classList.add('fade-out');
+                    
+                    setTimeout(() => {
+                        // Ocultamos la 1 y preparamos la 2
+                        seccionLectura.style.display = 'none';
+                        seccionOpciones.style.display = 'block';
+                        
+                        // Un micro-retraso para que el CSS aplique la animación de entrada
+                        setTimeout(() => {
+                            seccionOpciones.classList.remove('seccion-oculta');
+                            seccionOpciones.classList.add('seccion-activa');
+                        }, 50);
+                    }, 600); // 600ms es lo que dura la transición en CSS
+                }, 1000);
+            }
+        }
+    </script>
 
 
 <!-- Aqui va el pie de pagina, use css aparte aclaro xd /AC/-->

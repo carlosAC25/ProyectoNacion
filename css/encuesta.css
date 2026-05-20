@@ -1,0 +1,169 @@
+/* ==========================================================================
+   ESTILOS DEL CONTENIDO PRINCIPAL (Encuesta / Temas)
+   ========================================================================== */
+main {
+  min-height: calc(100vh - 80px - 200px); /* Para que ocupe buen espacio en pantalla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 5%;
+  overflow: hidden; /* Evita scrolls raros en las animaciones */
+}
+
+/* Clases base para las secciones y transiciones */
+#seccion-lectura, #seccion-opciones {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  transition: all 0.6s ease-in-out;
+}
+
+.seccion-activa {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.seccion-oculta {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-40px);
+  pointer-events: none;
+}
+
+/* Encabezados de ambas secciones */
+.encabezado-principal {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.encabezado-principal h2 {
+  color: var(--azul-oscuro);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.encabezado-principal p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* --- APARTADO 1: TARJETAS DE LECTURA --- */
+.contenedor-temas {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tarjeta-tema {
+  flex: 1;
+  min-width: 280px;
+  background-color: var(--blanco-puro);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transicion-suave);
+  text-align: center;
+}
+
+.tarjeta-tema:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-color: rgba(0, 123, 255, 0.3); /* Un azul clarito */
+}
+
+.tarjeta-tema.leido {
+  border-color: var(--azul-electrico);
+  background-color: #f0f7ff;
+}
+
+.tarjeta-tema h3 {
+  color: var(--azul-medio);
+  margin-bottom: 15px;
+}
+
+.estado-lectura {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #d9534f; /* Rojo de pendiente */
+  background: #fdf0f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: var(--transicion-suave);
+}
+
+.tarjeta-tema.leido .estado-lectura {
+  color: #28a745; /* Verde de completado */
+  background: #e8f5e9;
+}
+
+.mensaje-alerta {
+  text-align: center;
+  margin-top: 25px;
+  color: var(--azul-medio);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* --- APARTADO 2: BOTONES DE OPCIONES --- */
+.contenedor-botones {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.boton-opcion {
+  flex: 1;
+  min-width: 260px;
+  padding: 40px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  color: var(--blanco-puro);
+  transition: var(--transicion-suave);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.boton-opcion.opcion-1 {
+  background: linear-gradient(135deg, var(--azul-medio), var(--azul-electrico));
+}
+
+.boton-opcion.opcion-2 {
+  background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+}
+
+.boton-opcion:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  color: var(--blanco-puro);
+}
+
+.boton-opcion h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* --- ENLACE DE RESPALDO (Esquina) --- */
+.enlace-respaldo {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 0.85rem;
+  color: #888;
+  text-decoration: underline;
+  transition: var(--transicion-suave);
+}
+
+.enlace-respaldo:hover {
+  color: var(--azul-electrico);
+}
