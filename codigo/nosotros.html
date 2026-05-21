@@ -33,7 +33,161 @@
 
 <!-- Aqui va el contenido principal (lo que van a hacer) /AC/-->
     <main>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misión y Visión de Impacto</title>
+  <style>
+    /* Estilos Generales y Espaciado Primario */
+    .seccion-impacto {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+      color: #2d3748;
+    }
 
+    /* Contenedor Flex con mucho más espacio de separación */
+    .grid-dinamico {
+      display: flex;
+      gap: 50px; /* Espacio amplio entre columnas */
+      margin-bottom: 70px;
+      flex-wrap: wrap;
+    }
+
+    /* Tarjetas de Contenedor Principales */
+    .bloque-corporativo {
+      flex: 1;
+      min-width: 320px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px 30px; /* Más espacio interno */
+      box-shadow: 0 10px 30px rgba(0, 86, 179, 0.05);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    }
+
+    /* Títulos llamativos con degradado moderno (Azul a Verde) */
+    .bloque-corporativo h1 {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 35px;
+      background: linear-gradient(135deg, #0056b3 0%, #00b4d8 50%, #2ec4b6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    /* Cuadros de texto individuales (Cada párrafo es una caja con vida) */
+    .bloque-corporativo p {
+      background-color: #f4f9ff; /* Fondo azul pastel muy suave */
+      border-left: 4px solid #0077b6; /* Línea de acento azul */
+      padding: 22px; /* Párrafos más amplios y cómodos */
+      margin-bottom: 25px; /* Espacio notable entre párrafos */
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: justify;
+      color: #3f4e64;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.4s ease;
+    }
+
+    /* Evita el margen extra en el último elemento */
+    .bloque-corporativo p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ========================================================
+       ANIMACIONES E INYECCIÓN DE COLOR VIVO (HOVER)
+       ======================================================== */
+    
+    /* Animación del contenedor grande */
+    .bloque-corporativo:hover {
+      transform: translateY(-8px); /* Flota elegantemente */
+      box-shadow: 0 20px 40px rgba(0, 119, 182, 0.15);
+    }
+
+    /* Súper animación de los cuadros de párrafo: Neón e Iluminación */
+    .bloque-corporativo p:hover {
+      /* Fondo con degradado energético de Azul Eléctrico a Verde Esmeralda */
+      background: linear-gradient(135deg, #0056b3 0%, #00b4d8 100%); 
+      color: #ffffff; /* Texto blanco ultra limpio */
+      border-left-color: #2ec4b6; /* La línea cambia a verde brillante */
+      transform: scale(1.04) translateX(5px); /* Se agranda y se desplaza ligeramente a la derecha */
+      box-shadow: 0 10px 25px rgba(0, 180, 216, 0.4); /* Resplandor neón azul */
+      font-weight: 500;
+    }
+
+    /* Contenedor e Imagen estilizada en la parte inferior */
+    .galeria-imagen {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .galeria-imagen img {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+      border-radius: 16px;
+      border: 4px solid #ffffff;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    /* La imagen también reacciona con viveza */
+    .galeria-imagen img:hover {
+      transform: scale(1.03) rotate(0.5deg);
+      box-shadow: 0 20px 45px rgba(46, 196, 182, 0.3); /* Resplandor verde en la imagen */
+    }
+  </style>
+</head>
+<body>
+
+  <section class="seccion-impacto">
+
+    <!-- ESTRUCTURA LADO A LADO AMPLIA -->
+    <div class="grid-dinamico">
+      
+      <!-- BLOQUE VISIÓN -->
+      <div class="bloque-corporativo">
+        <h1>Nuestra Visión</h1>
+        <p>Como grupo, aspiramos a generar un impacto positivo en Guatemala, tomando como base los derechos fundamentales. Nuestro propósito es impulsar un cambio significativo dentro de los ámbitos laboral y judicial, promoviendo una sociedad más justa, ética y equitativa.</p>
+        
+        <p>Buscamos construir un entorno en el que la justicia prevalezca, evitando que los ciudadanos sean víctimas de abusos. Asimismo, deseamos fortalecer los valores éticos en cada individuo e incentivar una transformación real basada en el respeto, la verdad y el trato digno.</p>
+        
+        <p>Creemos firmemente que el trabajo ético y justamente remunerado es un pilar fundamental para el desarrollo del país. De igual manera, defendemos el derecho de cada persona a preservar su dignidad, demostrar su inocencia y ser valorada sin ser juzgada por prejuicios o falsos testimonios.</p>
+        
+        <p>Nuestra visión es dejar una huella positiva en la sociedad guatemalteca, contribuyendo a que las futuras generaciones vivan en un país con mayores oportunidades, igualdad y pleno respeto a los derechos humanos.</p>
+      </div>
+
+      <!-- BLOQUE MISIÓN -->
+      <div class="bloque-corporativo">
+        <h1>Nuestra Misión</h1>
+        <p>Promover el respeto y el cumplimiento de los derechos humanos en Guatemala, fortaleciendo la justicia y la equidad en los ámbitos laboral y judicial. Trabajamos para fomentar una cultura basada en la responsabilidad, la integridad y el respeto mutuo.</p>
+        
+        <p>Buscamos generar conciencia sobre la importancia de la verdad, la transparencia y el trato digno, impulsando acciones que contribuyan a erradicar las injusticias. Asimismo, promovemos un entorno donde el trabajo sea valorado y justamente remunerado, garantizando condiciones dignas para todos.</p>
+        
+        <p>Apoyamos la construcción de una sociedad en la que cada individuo pueda defender su dignidad e inocencia sin temor, fortaleciendo la confianza en un sistema más humano, transparente y equitativo.</p>
+        
+        <p>Con compromiso y responsabilidad, impulsamos un cambio real que beneficie a las generaciones presentes y futuras, consolidando una base sólida de justicia y humanidad en nuestro país.</p>
+      </div>
+
+    </div>
+
+    <!-- IMAGEN CON EFECTO DE LUZ -->
+    <div class="galeria-imagen">
+      <img src="../imagen/Rodmagenxd.jpg" alt="Imagen Misión y Visión con Brillo">
+    </div>
+
+  </section>
+
+</body>
+</html>
     </main>
 
 

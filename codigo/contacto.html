@@ -33,7 +33,233 @@
 
 <!-- Aqui va el contenido principal (lo que van a hacer) /AC/-->
     <main>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorio de Contacto Institucional Vivo</title>
+  <style>
+    /* Estilos base con fondo limpio para resaltar el color de las tarjetas */
+    .seccion-directorio {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+      color: #2d3748;
+    }
 
+    /* Encabezado con Texto en Degradado */
+    .header-directorio {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header-directorio h1 {
+      font-size: 38px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #003366 0%, #0066cc 50%, #00b4d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-directorio p {
+      font-size: 16px;
+      color: #556b82;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Cuadrícula espaciosa para las tarjetas */
+    .grid-directorio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 35px; /* Más espacio para respirar */
+    }
+
+    /* Tarjetas con Fondo de Color Vibrante (Azul Eléctrico) */
+    .tarjeta-institucion {
+      background: linear-gradient(135deg, #002244 0%, #004488 100%); /* Fondo azul potente */
+      border: 1px solid #0056b3;
+      border-radius: 16px;
+      padding: 35px 30px;
+      box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+    }
+
+    /* Título de la Institución (Texto Blanco Destacado) */
+    .tarjeta-institucion h2 {
+      font-size: 22px;
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 25px;
+      line-height: 1.4;
+      font-weight: 700;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 18px;
+    }
+
+    /* Lista de Datos Internos */
+    .datos-lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Cada fila es un recuadro semi-transparente que da capas de color */
+    .datos-lista li {
+      background: rgba(255, 255, 255, 0.06); 
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #e2e8f0; /* Blanco suave para lectura */
+      display: flex;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    /* Evita el margen en la última casilla */
+    .datos-lista li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Etiquetas (Ej: Ministro, Teléfono, etc.) en tono verde/cian vibrante */
+    .datos-lista strong {
+      color: #00f0ff; /* Neón cian para máximo contraste */
+      min-width: 95px;
+      display: inline-block;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+
+    /* Enlaces dentro de las tarjetas (Webs, Teléfonos, Correos) */
+    .datos-lista a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #00f0ff;
+      transition: all 0.2s ease;
+    }
+
+    .datos-lista a:hover {
+      color: #00f0ff;
+      border-bottom-style: solid;
+    }
+
+    /* ========================================================
+       EFECTOS INTERACTIVOS DE ALTA VIVIDEZ (HOVER)
+       ======================================================== */
+    
+    /* La tarjeta se enciende, flota y cambia a un degradado con destellos cian/verde */
+    .tarjeta-institucion:hover {
+      transform: translateY(-8px);
+      background: linear-gradient(135deg, #003366 0%, #0055aa 70%, #0088cc 100%);
+      box-shadow: 0 20px 40px rgba(0, 180, 216, 0.3); /* Resplandor neón azul */
+      border-color: #00b4d8;
+    }
+
+    /* Las filas de datos individuales se iluminan al pasar el mouse por encima de ellas */
+    .datos-lista li:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.02);
+      border-color: #00f0ff;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="seccion-directorio">
+    
+    <div class="header-directorio">
+      <h1>Contactos e Instituciones Clave</h1>
+      <p>Directorio oficial de entidades públicas y de defensa de derechos laborales y humanos en la República de Guatemala.</p>
+    </div>
+
+    <div class="grid-directorio">
+
+      <!-- 1. MINISTERIO DE TRABAJO -->
+      <article class="tarjeta-institucion">
+        <div>
+          <h2>Ministerio de Trabajo y Previsión Social</h2>
+          <ul class="datos-lista">
+            <li><strong>Ministro:</strong> Rafael Eugenio Rodríguez Pellecer</li>
+            <li><strong>Sitio web:</strong> <a href="https://www.mintrabajo.gob.gt/" target="_blank">mintrabajo.gob.gt</a></li>
+            <li><strong>Dirección:</strong> 7a Avenida 3-33, Zona 9, Ciudad de Guatemala</li>
+            <li><strong>Teléfono:</strong> <a href="tel:+50224117000">+502 2411-7000</a></li>
+            <li><strong>Fax:</strong> +502 2332-0707</li>
+            <li><strong>Email:</strong> <a href="mailto:mintrabajo@mintrabajo.gob.gt">mintrabajo@mintrabajo.gob.gt</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 2. INSPECCIÓN GENERAL DE TRABAJO -->
+      <article class="tarjeta-institucion">
+        <div>
+          <h2>Inspección General de Trabajo</h2>
+          <ul class="datos-lista">
+            <li><strong>Inspector:</strong> Carlos Enrique Figueroa</li>
+            <li><strong>Teléfono:</strong> <a href="tel:+50224117000">+502 2411-7000</a></li>
+            <li><strong>Email:</strong> <a href="mailto:inspeccion@mintrabajo.gob.gt">inspeccion@mintrabajo.gob.gt</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. TRIBUNAL DE HONOR -->
+      <article class="tarjeta-institucion">
+        <div>
+          <h2>Tribunal de Honor y Disciplina Laboral</h2>
+          <ul class="datos-lista">
+            <li><strong>Presidente:</strong> José Luis González Dubón</li>
+            <li><strong>Dirección:</strong> 9a Avenida 15-67, Zona 1, Ciudad de Guatemala</li>
+            <li><strong>Teléfono:</strong> <a href="tel:+50224118911">+502 2411-8911</a></li>
+            <li><strong>Fax:</strong> +502 2232-0911</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 4. DEFENSA PÚBLICA -->
+      <article class="tarjeta-institucion">
+        <div>
+          <h2>Defensa Pública Laboral</h2>
+          <ul class="datos-lista">
+            <li><strong>Defensora:</strong> Ana Lucía Villagrán</li>
+            <li><strong>Sitio web:</strong> <a href="https://www.defensapublica.gob.gt/" target="_blank">defensapublica.gob.gt</a></li>
+            <li><strong>Dirección:</strong> 15 Avenida 9-69, Zona 1, Ciudad de Guatemala</li>
+            <li><strong>Teléfono:</strong> <a href="tel:+50224119100">+502 2411-9100</a></li>
+            <li><strong>Fax:</strong> +502 2232-0910</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 5. COMISIÓN DE DERECHOS HUMANOS -->
+      <article class="tarjeta-institucion">
+        <div>
+          <h2>Comisión de Derechos Humanos del Congreso</h2>
+          <ul class="datos-lista">
+            <li><strong>Presidente:</strong> Jorge Estuardo Vargas</li>
+            <li><strong>Sitio web:</strong> <a href="https://www.congreso.gob.gt/" target="_blank">congreso.gob.gt</a></li>
+            <li><strong>Dirección:</strong> 9a Avenida 15-67, Zona 1, Ciudad de Guatemala</li>
+            <li><strong>Teléfono:</strong> <a href="tel:+50224118000">+502 2411-8000</a></li>
+            <li><strong>Fax:</strong> +502 2232-0800</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>
     </main>
 
 
